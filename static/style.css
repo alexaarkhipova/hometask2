@@ -1,0 +1,219 @@
+.my-photo.img {
+    width: 80; /* Установите желаемую ширину */
+    height: auto; /* Позволит изображению подстраиваться под высоту */
+    margin-right: 0px;
+}
+.settings-logout {
+    gap: 15px;
+    margin-left: 10px;
+    color:blue;
+    text-decoration: underline;
+    font-size: 14px;
+}
+.name {
+    margin-bottom: 5px;
+    margin-left: 10px;
+    font-size: 18px;
+}
+.submit {
+    margin-top: 20px;
+}
+.create-new-account {
+    margin-top: 0px;
+    color:blue;
+    text-decoration: underline;
+}
+
+.wrong-password {
+    color: red;
+    margin-bottom: 20px;
+    font-size: 14px;
+
+}
+.popular-tags {
+    margin-top: 50px;
+    margin-left: 40px;
+    margin-bottom: 20px;
+    font-size: 28px;
+}
+ .strokes {
+    margin-top: 20px;
+    margin-left: 40px;
+    margin-bottom: 20px;
+    font-size: 16px;
+}
+.stroke-1, .stroke-2, .stroke-3 {
+    gap: 20px;
+    font-weight: bold;
+}
+.row {
+    display: flex;
+  }
+.best-members {
+    margin-top: 50px;
+    margin-left: 40px;
+    margin-bottom: 20px;
+    font-size: 28px;
+}
+.best-members-list {
+    margin-top: 20px;
+    margin-left: 40px;
+    margin-bottom: 20px;
+    color:blue;
+    text-decoration: underline;
+}
+.list-of-questions {
+    margin-top: 20px;
+    margin-left: 50px;
+    margin-bottom: 20px;
+}
+.card-title {
+    font-size: 28px;
+}
+.under-question {
+    gap: 10px;
+}
+.under-question-tags {
+    margin-left: 30px;
+    gap: 10px;
+}
+.under-question p{
+    color:blue;
+    text-decoration: underline;
+}
+.questions {
+    flex: 0 0 auto;
+    margin-right: 15px;
+}
+
+.tags-members {
+    flex: 1;
+}
+
+.likes {
+    gap: 10px;
+}
+.dislikes {
+    gap: 10px;
+}
+.likes p{
+    color: green;
+}
+button.likes-button {
+    height: 40px;
+    margin-top: 5px;
+    box-sizing: border-box;
+}
+button.dislikes-button {
+    height: 40px;
+    margin-top: 5px;
+    box-sizing: border-box;
+}
+  .question-card {
+    margin-top: 20px;
+    margin-left: 40px;
+    margin-bottom: 20px;
+  }
+  
+  .card-body {
+    display: flex;
+}
+
+.avatar-likes {
+    flex: 0 0 auto;
+    margin-right: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.card-description {
+    flex: 1;
+    
+    margin-left: 10px;
+}
+.questions-headline {
+    margin-top: 50px;
+    margin-left: 40px;
+    margin-bottom: 20px;
+    gap: 30px;
+    align-items: center;
+}
+.new-questions {
+    font-size: 28px;
+}
+.hot-questions {
+    font-size: 20px;
+    color:blue;
+    text-decoration: underline;
+}
+.search-buttons {
+    margin-left: 40px;
+}
+.choose-upload-avatar {
+    gap: 50px;
+    align-items: end;
+}
+.tag-search {
+    margin-top: 50px;
+    margin-left: 40px;
+    margin-bottom: 20px;
+    font-size: 28px;
+}
+body {
+    overflow-x: hidden;
+}
+.login-form {
+    margin-left: 50px;
+    margin-right: 500px;
+}
+.login-main {
+    margin-top: 20px !important;
+    font-size: 28px;
+    margin-left: 50px;
+    margin-bottom: 20px;
+}
+.login-button {
+    margin-bottom: 20px;
+}
+.login, .email, .repeat-password, .nickname {
+    margin-bottom: 20px;
+}
+.repeat-password {
+    margin-top: 20px;
+}
+#forms {
+    margin-top: -80px;
+    margin-right: 35px;
+}
+.questions-form {
+    margin-left: 50px;
+    box-sizing: border-box;
+    margin-right: 210px;
+}
+.new-question-form {
+    font-size: 28px;
+    margin-left: 50px;
+    margin-top: 20px !important;
+    margin-bottom: 20px;
+}
+.questions-form input[type="text"],
+.questions-form textarea {
+    width: 600px;
+    height: 100px;
+}
+.enter-answer {
+    margin-left: 40px;
+    margin-top: 50px;
+}
+.answer-button {
+    margin-left: 40px;
+    margin-bottom: 20px;
+    margin-top: 0px;
+}
+.answer-card {
+    margin-left: 0px;
+}
+hr {
+    margin-left: 40px !important;
+}
