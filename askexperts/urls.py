@@ -25,5 +25,6 @@ urlpatterns = [
     path('signup', views.registration, name='registration'),
     path('ask', views.newquestion, name='newquestion'),
     path('settings', views.settings, name='settings'),
+    path('hot', views.hotquestions, name='hotquestions'),
     path('admin/', admin.site.urls),
 ]

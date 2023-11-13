@@ -20,8 +20,6 @@
 }
 .create-new-account {
     margin-top: 0px;
-    color:blue;
-    text-decoration: underline;
 }
 
 .wrong-password {
@@ -175,10 +173,7 @@ body {
 .repeat-password {
     margin-top: 20px;
 }
-#forms {
-    margin-top: -80px;
-    margin-right: 35px;
-}
+
 .questions-form {
     margin-left: 50px;
     box-sizing: border-box;

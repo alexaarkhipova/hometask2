@@ -28,3 +28,5 @@ def newquestion(request):
     return render(request, 'newquestion.html')
 def settings(request):
     return render(request, 'settings.html')
+def hotquestions(request):
+    return render(request, 'hotquestions.html')
