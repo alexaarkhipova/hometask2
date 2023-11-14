@@ -46,6 +46,8 @@ def login(request):
     return render(request, 'login.html')
 def registration(request):
     return render(request, 'registration.html')
+def taglist(request):
+    return render(request, 'taglist.html')
 def newquestion(request):
     return render(request, 'newquestion.html')
 def settings(request):

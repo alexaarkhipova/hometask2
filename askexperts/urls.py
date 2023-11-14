@@ -24,6 +24,7 @@ urlpatterns = [
     path('page/<int:page>', views.onequestion, name='question_paginated'),
     path('login', views.login, name='login'),
     path('signup', views.registration, name='registration'),
+    path('tag', views.taglist, name='taglist'),
     path('ask', views.newquestion, name='newquestion'),
     path('settings', views.settings, name='settings'),
     path('hot', views.hotquestions, name='hotquestions'),
