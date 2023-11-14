@@ -1,6 +1,8 @@
 from django.shortcuts import render
-from django.core.paginator import Paginator
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.http import HttpResponse
+from django.conf import settings
+from django.shortcuts import redirect
 
 # Create your views here.
 QUESTIONS = [
@@ -8,18 +10,38 @@ QUESTIONS = [
             'id': i,
             'title': f'Question {i}',
             'content': f'Long lorem ispum {i}'
-        } for i in range(20)
+        } for i in range(1, 101)
     ]
-def paginate(objects, page, per_page=20):
+ANSWERS = [
+        {
+            'id': i,
+            'title': f'Answer {i}',
+        } for i in range(1, 101)
+    ]
+def paginate(objects, page, per_page):
     paginator = Paginator(objects, per_page)
-    return paginator.page(1)
+    page_obj = paginator.page(page)
+    return page_obj
 
 def index(request):
-    return render(request, 'index.html', {'questions': paginate(QUESTIONS, 1)})
+    objects = QUESTIONS
+    page_number = request.GET.get('page', 1)
+    page_obj = paginate(objects, page_number, per_page=20)
+    context = {
+        'questions': page_obj,
+    }
+    return render(request, 'index.html', context)
 
 def onequestion(request, question_id):
-    item = QUESTIONS[question_id]
-    return render(request, 'onequestion.html', { 'question': item })
+    objects = ANSWERS
+    page_number = request.GET.get('page', 1)
+    item = QUESTIONS[question_id - 1]
+    page_obj = paginate(objects, page_number, per_page=30)
+    context = {
+        'answers': page_obj,
+        'question': item,
+    }
+    return render(request, 'onequestion.html', context)
 def login(request):
     return render(request, 'login.html')
 def registration(request):
@@ -29,4 +51,10 @@ def newquestion(request):
 def settings(request):
     return render(request, 'settings.html')
 def hotquestions(request):
-    return render(request, 'hotquestions.html')
+    objects = QUESTIONS
+    page_number = request.GET.get('page', 1)
+    page_obj = paginate(objects, page_number, per_page=20)
+    context = {
+        'questions': page_obj,
+    }
+    return render(request, 'hotquestions.html', context)
