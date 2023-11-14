@@ -1,0 +1,21 @@
+{% extends 'layouts/base.html' %}
+{% block content %}
+{% load static %}
+            <div class="questions-form col">
+                <h5 class="settings-name" id="headline">New question</h5>
+                <div class="mb-3">
+                    <label for="exampleFormControlInput1" class="form-label" id="newQuestionForm">Title</label>
+                    <input class="form-control" id="newQuestionFormCard">
+                  </div>
+                  <div class="mb-3">
+                    <label for="exampleFormControlTextarea1" class="form-label" id="newQuestionForm">Text</label>
+                    <textarea class="form-control" rows="3"></textarea>
+                  </div>
+                  <div class="mb-3">
+                    <label for="exampleFormControlInput1" class="form-label" id="newQuestionForm">Tags</label>
+                    <input class="form-control" id="newQuestionFormCard">
+                  </div>
+                  <button type="submit" class="ask-button submit btn btn-primary">Ask!</button>
+            </div>
+            {% endblock %}
+           

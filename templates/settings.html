@@ -1,0 +1,32 @@
+{% extends 'layouts/base.html' %}
+{% block content %}
+{% load static %}
+            <div class="login-form col">
+                <h5 class="login-main" id="headline">Settings: Alexandra</h5>
+                <form>
+                    <div class="login">
+                        <label for="exampleInputEmail1" class="form-label">Login</label>
+                        <input type="email" class="form-control" id="exampleInputEmail1">
+                      </div>
+                      <div class="email">
+                          <label for="exampleInputEmail1" class="form-label">Email</label>
+                          <input type="email" class="form-control" id="exampleInputEmail1">
+                        </div>
+                        <div class="nickname">
+                          <label for="exampleInputEmail1" class="form-label">Nickname</label>
+                          <input class="form-control">
+                        </div>
+                        <div class="upload-avatar">
+                          <p><label for="exampleInputEmail1" class="form-label">Upload avatar</label></p>
+                          <p><img src="{% static 'img/кот-настройки.jpg' %}"></p>
+                        </div>
+                        <div class="choose-upload-avatar d-flex">
+                              <input class="form-control">
+                            <div class="choose avatar">
+                            <button type="submit" class="submit btn btn-primary bg-transparent text-primary">Choose</button>
+                          </div>
+                          </div>
+                      <button type="submit" class="login-button submit btn btn-primary">Save</button>
+                    </form>
+                  </div>
+              {% endblock %}

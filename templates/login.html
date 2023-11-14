@@ -1,0 +1,20 @@
+{% extends 'layouts/logout.html' %}
+{% block content %}
+{% load static %}
+            <div class="login-form col">
+                <form>
+                    <h5 class="login-main" id="headline">Login</h5>
+                    <div class="wrong-password">Sorry, wrong password!</div>
+                    <div class="login">
+                      <label for="exampleInputEmail1" class="form-label">Login</label>
+                      <input type="email" class="form-control" id="exampleInputEmail1">
+                    </div>
+                    <div class="password">
+                      <label for="exampleInputPassword1" class="form-label">Password</label>
+                      <input type="password" class="form-control" id="exampleInputPassword1">
+                    </div>
+                    <button type="submit" class="login-button submit btn btn-primary">Log in!</button>
+                  </form>
+                  <a class="create-new-account" href="{% url 'registration' %}">create new account</a>
+                </div>
+            {% endblock %}
