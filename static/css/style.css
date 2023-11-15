@@ -194,3 +194,10 @@ hr {
     margin-bottom: 20px; 
     white-space: nowrap
 }
+footer {
+    margin-top: 100px;
+}
+#mistake {
+    color: red;
+    font-size: 14px;
+}

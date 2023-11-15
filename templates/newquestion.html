@@ -4,17 +4,20 @@
             <div class="questions-form col">
                 <h5 class="settings-name" id="headline">New question</h5>
                 <div class="mb-3">
-                    <label for="exampleFormControlInput1" class="form-label" id="newQuestionForm">Title</label>
+                    <label for="newQuestionFormCard" class="form-label" id="newQuestionForm">Title</label>
                     <input class="form-control" id="newQuestionFormCard">
                   </div>
+                  <p id="mistake">Wrong title</p>
                   <div class="mb-3">
-                    <label for="exampleFormControlTextarea1" class="form-label" id="newQuestionForm">Text</label>
-                    <textarea class="form-control" rows="3"></textarea>
+                    <label for="newQuestionFormCard" class="form-label" id="newQuestionForm">Text</label>
+                    <textarea class="form-control" id="newQuestionFormCard" rows="3"></textarea>
                   </div>
+                  <p id="mistake">Wrong text</p>
                   <div class="mb-3">
-                    <label for="exampleFormControlInput1" class="form-label" id="newQuestionForm">Tags</label>
+                    <label for="newQuestionFormCard" class="form-label" id="newQuestionForm">Tags</label>
                     <input class="form-control" id="newQuestionFormCard">
                   </div>
+                  <p id="mistake">Wrong tags</p>
                   <button type="submit" class="ask-button submit btn btn-primary">Ask!</button>
             </div>
             {% endblock %}
