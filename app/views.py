@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger, Page
 from django.http import HttpResponse
 from django.conf import settings
 from django.shortcuts import redirect
@@ -18,27 +18,31 @@ ANSWERS = [
             'title': f'Answer {i}',
         } for i in range(1, 101)
     ]
-def paginate(objects, page, per_page):
+def paginate(objects, request, per_page):
     paginator = Paginator(objects, per_page)
-    page_obj = paginator.page(page)
+    page_number = request.GET.get('page', 1)
+    try:
+        page_obj = paginator.page(page_number)
+    except (PageNotAnInteger, EmptyPage):
+        page_obj = paginator.page(1)
     return page_obj
 
 def index(request):
-    objects = QUESTIONS
-    page_number = request.GET.get('page', 1)
-    page_obj = paginate(objects, page_number, per_page=20)
+    question_objects = QUESTIONS
+    questions_page_obj = paginate(question_objects, request, per_page=20)
     context = {
-        'questions': page_obj,
+        'objects': questions_page_obj,
+        'questions': questions_page_obj,
     }
     return render(request, 'index.html', context)
 
 def onequestion(request, question_id):
-    objects = ANSWERS
-    page_number = request.GET.get('page', 1)
+    answer_objects = ANSWERS
     item = QUESTIONS[question_id - 1]
-    page_obj = paginate(objects, page_number, per_page=30)
+    answers_page_obj = paginate(answer_objects, request, per_page=30)
     context = {
-        'answers': page_obj,
+        'objects': answers_page_obj,
+        'answers': answers_page_obj,
         'question': item,
     }
     return render(request, 'onequestion.html', context)
@@ -53,10 +57,10 @@ def newquestion(request):
 def settings(request):
     return render(request, 'settings.html')
 def hotquestions(request):
-    objects = QUESTIONS
-    page_number = request.GET.get('page', 1)
-    page_obj = paginate(objects, page_number, per_page=20)
+    question_objects = QUESTIONS
+    questions_page_obj = paginate(question_objects, request, per_page=20)
     context = {
-        'questions': page_obj,
+        'objects': questions_page_obj,
+        'questions': questions_page_obj,
     }
     return render(request, 'hotquestions.html', context)

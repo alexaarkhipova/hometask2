@@ -41,33 +41,7 @@
                         {% for answer in answers %}
                         {% include 'components/answer-item.html' %}
                         {% endfor %}
-                        <div class="search-buttons">
-                          <nav aria-label="Page navigation example">
-                              <ul class="pagination">
-                                  {% if answers.has_previous %}
-                                      <li class="page-item">
-                                          <a class="page-link" href="?page=1" aria-label="First">
-                                              <span aria-hidden="true">&laquo;</span>
-                                          </a>
-                                      </li>
-                                  {% endif %}
-                  
-                                  {% for i in answers.paginator.page_range %}
-                                      <li class="page-item {% if i == answers.number %}active{% endif %}">
-                                          <a class="page-link" href="?page={{ i }}">{{ i }}</a>
-                                      </li>
-                                  {% endfor %}
-                  
-                                  {% if answers.has_next %}
-                                      <li class="page-item">
-                                          <a class="page-link" href="?page={{ answers.next_page_number }}" aria-label="Next">
-                                              <span aria-hidden="true">&raquo;</span>
-                                          </a>
-                                      </li>
-                                  {% endif %}
-                              </ul>
-                          </nav>
-                      </div>
+                        {% include 'components/paginator.html' %}
                     <hr>
                 </div>
                     <div class="enter-answer mb-3">
